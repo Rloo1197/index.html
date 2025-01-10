@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Rloo11</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Background statis */
+        .parallax {
+            background-image: url('https://files.catbox.moe/1zo1fb.jpg'); 
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.3s ease; /* Transisi untuk perubahan background */
+        }
+
+        .content {
+            text-align: center;
+            color: white;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.8); 
+            border-radius: 15px; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+            width: 80%;
+            max-width: 600px; 
+        }
+
+        .profile-image {
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            margin-bottom: 20px; 
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 0;
+            color: white; 
+        }
+
+        .description {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: white; 
+        }
+
+        /* Styling untuk audio player */
+        .audio-container {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 500px;
+            transition: background 0.3s ease;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .audio-container:hover {
+            background: rgba(0, 0, 0, 0.9); 
+        }
+
+        audio {
+            width: 100%;
+            height: 40px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background: rgba(0, 0, 0, 0.8) !important; 
+            border-radius: 10px;
+        }
+
+        /* Styling untuk konten lainnya */
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #e0e0e0;
+            color: black;
+            border-radius: 15px; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+            margin: 20px;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section li {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .footer {
+            background-color: #00bcd4;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            border-top: 5px solid #ffffff; 
+            box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1); 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+
+        .footer p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Responsivitas untuk mobile */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .section li {
+                font-size: 1rem;
+            }
+
+            .footer p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Latar belakang dengan gambar statis -->
+    <div class="parallax" id="parallax-background">
+        <div class="content">
+            <!-- Foto Profil Bulat -->
+            <img src="https://files.catbox.moe/hdl3pv.jpg" alt="Rloo11" class="profile-image"> 
+
+            <h1 class="title">Rloo11</h1>
+            <p class="description">hello, this is my first web porfolio and i just tried to make it like this to learn :></p>
+            
+            <!-- Audio Player -->
+            <div class="audio-container">
+                <audio id="audio-player" controls>
+                    <source src="https://files.catbox.moe/7dbril.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section konten dengan background abu-abu -->
+    <div class="section">
+        <h2>About Me</h2>
+        <p>hello, i am a student who is learning and diving into the world of coding, and I'm still learning 'hello world' 😘😹🗿. as for my hobbies, I enjoy playing games and delving into new things.</p>
+    </div>
+
+    <div class="section">
+        <h2>My Skills</h2>
+        <ul>
+            <li>html, js, css</li>
+            <li>react, node js</li>
+            <li>connection security</li>
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>~ basreng</p>
+    </div>
+
+    <script>
+        // Ambil elemen-elemen yang diperlukan
+        const audioPlayer = document.getElementById('audio-player');
+        const parallaxBackground = document.getElementById('parallax-background');
+
+        // Event listener untuk mendeteksi ketika audio diputar
+        audioPlayer.addEventListener('play', () => {
+            // Ganti background menjadi GIF ketika audio diputar
+            parallaxBackground.style.backgroundImage = "url('https://s13.gifyu.com/images/SX5o0.gif')"; // Ganti URL dengan GIF yang diinginkan
+        });
+
+        // Event listener untuk mendeteksi ketika audio berhenti
+        audioPlayer.addEventListener('pause', () => {
+            // Kembalikan background ke gambar statis ketika audio berhenti
+            parallaxBackground.style.backgroundImage = "url('https://files.catbox.moe/1zo1fb.jpg')";
+        });
+
+        audioPlayer.addEventListener('ended', () => {
+            // Kembalikan background ke gambar statis setelah audio selesai
+            parallaxBackground.style.backgroundImage = "url('https://files.catbox.moe/1zo1fb.jpg')";
+        });
+    </script>
+</body>
+</html>
